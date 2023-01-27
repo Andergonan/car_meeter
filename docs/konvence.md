@@ -52,7 +52,8 @@
 - přepnutí na hlavní brach `git checkout main`
 - vytvoří novou brach `git branch <nazev_nove_branch>`
 - přepne do nové brach `git checkout <nazev_nove_branch>`
-- přidá nové soubory do brach `git add`
+- ověří aktuální větev `git branch`
+- přidá nové soubory do brach `git add .`
 - provede commit `git commit -m "zprava k commitu"`
 - přidá změny do branch na gitu `git push origin <nazev_branch>`
 
