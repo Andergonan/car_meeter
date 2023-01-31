@@ -1,10 +1,10 @@
 # Car Meeter
-- *version 0.0.8*
-- *last update 26.01.2023*
+- *version 0.2.2*
+- *last update 31.01.2023*
 
 ## Rozcestník
 - *[konvence](docs/konvence.md)*
-- *[dev documentation](dosc/dev.md)*
+- *[dev documentation](docs/dev.md)*
 
 ## Version log
 
@@ -14,10 +14,10 @@
     - přidání konvencí
     - oddělení dokumentace pro vývojáře
 - úprava registračního sryptu
-    - ověřování e-mail adres ?
-- propojení s SMTP ?
-    - vytvořen na localhostu
-    - plně funkční
+    - ověřování e-mail adres
+    - **OVĚŘENÍ NEFUGUJE, PŘEDMĚT DALŠÍHO UPDATU!!!**
+- odesílání ověřovacího e-mailu novému uživateli
+    - pro testovací účely je využívána schránka a [SMTP seznam.cz](https://napoveda.seznam.cz/cz/imap-pop3-smtp/)
 
 ### Co je nového ve verzi 0.0.8
 - kontrola zadávaného hesla

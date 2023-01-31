@@ -48,30 +48,49 @@
             exit;
         
         } else if ($mysql = $conn->prepare('INSERT INTO users (username, email, password) VALUES (?, ?, ?)')) {
-            
+
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            $code = rand(1000, 9999);
-            //$mysql->bind_param('sss', $_POST['username'], $_POST['email'], $password);
-            $mysql->execute();
+            $mysql->bind_param('sss', $_POST['username'], $_POST['email'], $password);
 
-            mail($_POST['email'], "Verification Code for CarMeeter", $code);
+                
+            $verification_code = rand(1000, 9999); // generate random (4-digit) verify code
 
-            session_start();
-            $_SESSION['code'] = $code;
-            $_SESSION['email'] = $_POST['email'];
+            // send verifi code to user e-mail (PHPMailer)
+            $to = $_POST['email'];
+            $subject = "CarMeeter verification code";
+            $message = "Your verification code is: " . $verification_code;
+            $headers = "From: isveryficationtest@seznam.cz";
+            mail($to, $subject, $message, $headers);
 
-            echo '
-                <form><form>
-            '
+            // generate form for verifi code
+            echo 
+            '<form action="" method="post">
+                <input type="text" name="verification_code" placeholder="Enter verification code">
+                <input type="submit" value="Verify">
+            </form>';
 
-            //$_SESSION['error_message'] = 'Registrace probělhla úspěšně! Nyní se můžete <a href="index.html">přihlásit<a/>!';
-            header("Location: http://localhost/car_meeter/signup");
-            exit;
+            if (mail($to, $subject, $message, $headers)) {
+                echo 'Na váš e-mail byl odeslán ověřovací kód.';
+            } else {
+                echo 'Na váš e-mail se nepodařilo poslat ověřovací kód, zkuste to prosím znovi. :/';
+            }
+
+            if (isset($_POST['verification_code']) && $_POST['verification_code'] ==  $_SESSION["verification_code"]) {
+                $mysql->execute();
+
+                session_start();
+                $_SESSION['error_message'] = 'Registrace proběhla úspěšně! Nyní se můžete přihlásit!';
+                header("Location: http://localhost/car_meeter/login");
+                exit;
+            }
         }
         $mysql->close();
     } else {
         
-        echo 'Něco se pokazilo :/.';
+        session_start();
+        $_SESSION['error_message'] = "Něco se pokazilo :/.";
+        header("Location: http://localhost/car_meeter/signup");
+        exit;
     }
     
     $conn->close();
