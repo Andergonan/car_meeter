@@ -7,7 +7,7 @@
     if (!isset($_SESSION['loggedin'])) {
         $pages = [
             "home" => "Domů",
-            "register" => "Registrace",
+            "signup" => "Registrace",
             "login" => "Přihlášení",
             "404" => "404"
         ];
