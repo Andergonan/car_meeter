@@ -1,6 +1,6 @@
 # Car Meeter
 - *version 0.2.5*
-- *last update 31.01.2023*
+- *last update 06.02.2023*
 
 ## Rozcestník
 - *[konvence](docs/konvence.md)*
