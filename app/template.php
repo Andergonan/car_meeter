@@ -35,11 +35,6 @@
         $page = '404';
     }
 
-    if(isset($_SESSION['error_message'])) {
-        echo $_SESSION['error_message'];
-        unset($_SESSION['error_message']);
-    }
-
     $title = ($page == "home" ? "" : $pages[$page] . " | ") . "CarMeeter";
 
     $navigation = "";
@@ -58,7 +53,7 @@
         $mobilenav .= '<a ' . ($page == $key ? 'class="active" ' : '') . 'href="' . $key . '">' . $val . '</a>';
     }*/
 
-    // content
+    // save contet to variables
     $content = file_get_contents("app/fragments/$page.html");
     $pageTemplate = file_get_contents("app/fragments/page.html");
     $header = file_get_contents("app/fragments/_header.html");
@@ -71,5 +66,17 @@
     //$pageTemplate = str_replace("{mobilenav}", $mobilenav, $pageTemplate);
     $pageTemplate = str_replace("{content}", $content, $pageTemplate);
     $pageTemplate = str_replace("{footer}", $footer, $pageTemplate);
+    
+    // dysplay content
     echo $pageTemplate;
+
+    if(isset($_SESSION['verifi_form'])) {
+        echo $_SESSION['verifi_form'];
+        unset($_SESSION['verifi_form']);
+    }
+
+    if(isset($_SESSION['error_message'])) {
+        echo $_SESSION['error_message'];
+        unset($_SESSION['error_message']);
+    }
 ?>
