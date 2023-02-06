@@ -1,14 +1,13 @@
 # Konvence
 
-- <a href="code_write">Psaní kódu</a>
-- <a href="git_commit">Git commit</a>
-    - <a href="git_commit_issues">Issues</a>
-    - <a href="git_commit_branches">Branches</a>
-    - <a href="git_commit_how">How (git tutorial)</a>
-- <a href="versions">Verzování</a>
+- [Psaní kódu](#jak-psát-kód)
+- [Git commit](#git-commit)
+    - [Issues](#issues)
+    - [Branches](#braches)
+    - [How (git tutorial)](#how-git-tutorial)
+- [Verzování](#verzování)
 
 ## Jak psát kód
-<a name="code_write"></a>
 
 - přehledně
 - nedělej to, co je hotové
@@ -16,20 +15,17 @@
 - komentuj krátce a stručně a pouze tehdy, pokud je to potřeba
 
 ## Git commit
-<a name="git_commit"></a>
 
 - nikdy nový kód nepushuj do main
 - vytvoř novou brach a následně pullrequest
 
 ### Issues
-<a name="git_commit_issues"></a>
 
 - vždy issue pojmenuj tak, aby bylo jasné o co se jedná
 - do popisu uveď detaily
 - tvoř ve tvaru `štítek: co se řeší`
 
 ### Braches
-<a name="git_commit_branches"></a>
 
 - vždy uváděj ve tvaru `štíket_version_issue`
     - `update_0.2.3_dej-harrymu-nove-koste`
@@ -46,7 +42,6 @@
 - vždy řádně uprav soubor *README.md*
 
 ### How (git tutorial)
-<a name="git_commit_how"></a>
 
 - naklonování main `git clone "URL"`
 - přepnutí na hlavní brach `git checkout main`
@@ -58,7 +53,6 @@
 - přidá změny do branch na gitu `git push origin <nazev_branch>`
 
 # Verzování
-<a name="versions"></a>
 
 - máme 3 řády `1.2.3`
     - `1.` řád `main`

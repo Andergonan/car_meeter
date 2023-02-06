@@ -1,12 +1,21 @@
 # Car Meeter
-- *version 0.2.2*
-- *last update 31.01.2023*
+- *version 0.2.5*
+- *last update 06.02.2023*
 
 ## Rozcestník
 - *[konvence](docs/konvence.md)*
 - *[dev documentation](docs/dev.md)*
 
 ## Version log
+
+### Co je nového ve verzi 0.2.5
+- úprava a zabezpečení registrace
+    - úprava *signup.php*
+    - přidání scriptu *verifi.php*
+    - zabezpečený způsob posílání verifikace
+    - registrace plně funkční
+- opraven rozcestník dokumentace
+- úprava dokumentace
 
 ### Co je nového ve verzi 0.2.2
 - přejmenování "register" na "signup"
