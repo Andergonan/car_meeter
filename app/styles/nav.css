@@ -1,0 +1,68 @@
+/* header navigation bar */
+nav .top-nav-btn-group {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;    
+}
+  .top-nav-btn-group button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    border-radius: 0.4em;
+    border: 0px;
+    margin-right: 5rem;
+    background-color: #ff3737;
+    transition: 0.5s ease;
+  }
+  .top-nav-btn-group button:not(:last-child) {
+    border-right: none;
+  }
+  .top-nav-btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  .top-nav-btn-group button:hover {
+    transition: 0.5s ease;
+    background-color: #7c3535;
+}
+
+/* mobile navigation */
+.mobile-top-nav {
+    overflow: hidden;
+    background-color: #333;
+    position: relative;
+}
+    .mobile-top-nav #mobile-top-nav-links {
+      display: none;
+    }
+    .mobile-top-nav a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-size: 17px;
+      display: block;
+    }
+    .mobile-top-nav a.icon {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .mobile-top-nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    .active {
+      background-color: rgb(63, 63, 63);
+      color: white;
+    }
+    @media (min-width: 900px) {
+      .mobile-top-nav {
+        display: none;
+    }
+}

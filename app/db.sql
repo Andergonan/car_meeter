@@ -4,14 +4,25 @@ USE `car_meeter`;
 
 CREATE TABLE IF NOT EXISTS `car_meeter`.`users` (
 	`id` INT NOT NULL AUTO_INCREMENT,
-  	`username` VARCHAR(50) NOT NULL,
-    `email` VARCHAR(255) NOT NULL,
-  	`password` VARCHAR(255) NOT NULL,
-    PRIMARY KEY (`id`)
+  `firstname` VARCHAR(50) NOT NULL,
+  `lastname` VARCHAR(50) NOT NULL,
+  `username` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
-INSERT INTO `car_meeter`.`users` (`username`,  `email`, `password`) VALUES
-('testuser', 'testuser@email.com', '$2y$10$qn9f7Q3oPTFMKHSIUUFyQeRHrp8U3o.EEbGooUyQIS/spYKoyF8O.');
+CREATE TRIGGER car_meeter.trg_format_names
+BEFORE INSERT ON car_meeter.users
+FOR EACH ROW
+BEGIN 
+  SET NEW.firstname = CONCAT(UCASE(LEFT(NEW.firstname, 1)), LCASE(SUBSTRING(NEW.firstname, 2)));
+  SET NEW.lastname = CONCAT(UCASE(LEFT(NEW.lastname, 1)), LCASE(SUBSTRING(NEW.lastname, 2)));
+END;
+
+
+/*INSERT INTO `car_meeter`.`users` (`username`,  `email`, `password`) VALUES
+('testuser', 'testuser@email.com', '$2y$10$qn9f7Q3oPTFMKHSIUUFyQeRHrp8U3o.EEbGooUyQIS/spYKoyF8O.');*/
 
 /*CREATE TABLE IF NOT EXISTS `car_meeter`.`meets` (
     `id` int(11) NOT NULL AUTO_INCREMENT,

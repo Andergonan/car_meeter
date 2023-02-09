@@ -1,12 +1,32 @@
 # Car Meeter
-- *version 0.2.5*
-- *last update 06.02.2023*
+- *version 0.6.7*
+- *last update 09.02.2023*
 
 ## Rozcestník
 - *[konvence](docs/konvence.md)*
 - *[dev documentation](docs/dev.md)*
 
 ## Version log
+
+### Co je nového ve verzi 0.6.7
+- úprava registrace + DB
+    - přidána pole - jméno (firstname) a příjmení (lastname)
+        - *verifi.php*
+        - *auth_functions.php*
+        - *db.sql*
+        - přídání trigger do DB pro tabulku users (úprava jména a příjmení)
+    - validace jména a příjmení
+        - nesmí obsahovat jiné znaky než-li písmena
+- zprovozněno přihlašování uživatelů
+    - úprava *login.php*
+- přidání balíčku ikon
+- přidáno stylování
+    - navigace
+    - formuláře
+    - 404 (animace)
+    - atd.
+- zprovozněna navigace pro mobilní zařízení
+- **NEFUNKČNÍ ODHLAŠOVÁNÍ**
 
 ### Co je nového ve verzi 0.2.5
 - úprava a zabezpečení registrace
