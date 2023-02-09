@@ -1,5 +1,8 @@
 <?php
+    
     session_start();
+
+    require('../db_conn.php');
 
     if (!isset($_POST['username'], $_POST['password'])) {
   
@@ -24,13 +27,18 @@
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
-            //echo 'Vítejte ' . $_SESSION['name'] . '!';
-            header('Location: home.php');
+            header('Location: http://localhost/car_meeter/login_home');
         } else {
-            echo 'Zadané přihlašovací údaje jsou nesprávné!';
+
+            $_SESSION['error_message'] = 'Zadané přihlašovací údaje jsou nesprávné!';
+            header("Location: http://localhost/car_meeter/login");
+            exit;
         }
     } else {
-        echo 'Zadané přihlašovací údaje jsou nesprávné!';
+        
+        $_SESSION['error_message'] = 'Zadané přihlašovací údaje jsou nesprávné!';
+        header('Location: http://localhost/car_meeter/login');
+        exit;
     }
     
     $mysql->close();

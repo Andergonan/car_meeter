@@ -1,5 +1,6 @@
 # Dev documentation
 
+- *[Přihlášení uživatele](#přihlášení-uživatele)*
 - *[Registrace uživatele](#registrace-uživatele)*
     - *[Ověření hesla](#ověření-hesla)*
     - *[Ověření uživatele](#ověření-uživatele)*
@@ -11,12 +12,16 @@
 ### Template system
 
 
+## Přihlášení uživatele
+
 ## Registrace uživatele
 
-- *template.php* přesměrovává na fragment *signup.html*
-- `<form/>` volá script *app/scripts/php/auth/signup.php*
+1) *template.php* přesměrovává na fragment *signup.html*
+2) `<form/>` volá scripty authorization
+3) po úspěšné registraci je uživatel uložen do DB (jméno a příjmení prochází triggerem)
 
 ### Ověření hesla
+
 - heslo je schváleno pouze tehdy... 
     1) obsahuje-li minimálně 8 znaků
     2) obsahuje alespoň jedno velké a jedno malé písmeno
@@ -24,10 +29,14 @@
 - pro šifrování hesel je využívána funkce [`password_hash()`](https://www.php.net/manual/en/function.password-hash.php)
 
 ### Ověření uživatele
+
 - uživatelské jméno je schváleno pouze tehdy...
     1) uživatelské jméno ještě neexistuje
+- jméno a příjmení je schváleno pouze tehdy...
+    1) neobashuje-li mezeru, číslici či jiný znak než písmeno
 
 #### Ověření e-mailu
+
 - e-mailová adresa je schválena pouze tehdy...
     1) e-mailová adresa není v databázi již uložena
     2) splňuje parametry e-mailové adresy (jmeno@domena.cz)

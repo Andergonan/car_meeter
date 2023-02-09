@@ -1,0 +1,174 @@
+.road {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    width: 50rem;
+    border-radius: 10em;
+    background: #8a8a8a;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+    .road::before {
+        content: "";
+        position: absolute;
+        background: linear-gradient(90deg, #fff, #fff 50%, transparent 50%, transparent 100%);
+        background-size: 3rem;
+        height: 0.1rem;
+        width: 100%;
+        animation: road_anim 0.198s linear infinite;
+    }
+        @keyframes road_anim {
+            0% {
+                background-position: 50px 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+    .racecar {
+        position: absolute;
+        height: 5rem;
+        width: 12rem;
+        left: 2rem;
+        background: #ff0000;
+        border-radius: 0.6rem;
+        box-shadow: -10px 10px #0000003a;
+        transform-style: preserve-3d;
+        perspective: 900px;
+        animation: racecar_anim 4s linear infinite;
+    }
+        .racecar::before {
+            content: "";
+            position: absolute;
+            height: 1.1rem;
+            width: 0.4rem;
+            left: 0.1rem;
+            top: 0.7rem;
+            background: #751002;
+            border-radius: 0.2rem;
+            box-shadow: 0 39px #751002;
+        }
+        .racecar::after {
+            content: "";
+            position: absolute;
+            height: 1.3rem;
+            width: 0.4rem;
+            right: 0.1rem;
+            top: 0.6rem;
+            background: #fffb1fcb;
+            border-radius: 0.2rem;
+            box-shadow: 0 40px #fffb1fcb;
+        }
+        .racecar span {
+            position: absolute;
+            inset: 5px 10px;
+            background: #fc2d2d;
+            border-radius: 0.6rem;   
+        }
+            .racecar span .roof {
+                position: absolute;
+                inset: 0px 28px;
+                background: #000000;
+                border-radius: 0.6rem; 
+            }
+            .racecar span .roof::before {
+                content: "";
+                position: absolute;
+                inset: 4px 15px;
+                background: #fc2d2d;
+                border-radius: 0.6rem; 
+            }
+            .racecar span .roof::after {
+                content: "";
+                position: absolute;
+                inset: 0px 55px;
+                background: #fc2d2d; 
+            }
+            .racecar span i {
+                position: absolute;
+                inset: 0;
+            }
+            .racecar span i::before {
+                content: "";
+                position: absolute;
+                height: 1.2rem;
+                width: 0.3rem;
+                left: 2rem;
+                top: 0.001rem;
+                background: #fc2d2d;
+                transform-origin: right;
+                transform: rotate(102deg);
+                box-shadow: 32px -107px #fc2d2d;
+            }
+            .racecar span i::after {
+                content: "";
+                position: absolute;
+                height: 1.2rem;
+                width: 0.3rem;
+                left: 2rem;
+                bottom: 0.001rem;
+                background: #fc2d2d;
+                transform-origin: right;
+                transform: rotate(-102deg);
+                box-shadow: 32px 107px #fc2d2d;
+            }
+        .racecar .lights {
+            position: absolute;
+            height: 4rem;
+            width: 0.6rem;
+            right: -0.1rem;
+            top: 0.5rem;
+            background: #0002;
+            border-radius: 2rem;
+            transform-style: preserve-3d;
+        }
+            .racecar .lights::before {
+                content: '';
+                position: absolute;
+                height: 1rem;
+                width: 12rem;
+                left: 0rem;
+                top: 0.2rem;
+                background: linear-gradient(90deg, #f9f63466, transparent);
+                transform-origin: left;
+                transform: perspective(400px) rotateY(-50deg);
+            }
+            .racecar .lights::after {
+                content: '';
+                position: absolute;
+                height: 1rem;
+                width: 12rem;
+                left: 0rem;
+                bottom: 0.2rem;
+                background: linear-gradient(90deg, #f9f63466, transparent);
+                transform-origin: left;
+                transform: perspective(500px) rotateY(-50deg);
+            }
+        @keyframes racecar_anim {
+            0% {
+                transform: translateX(20px) translateY(-20px);
+            }
+            25% {
+                transform: translateX(-10px) translateY(0px);
+            }
+            50% {
+                transform: translateX(20px) translateY(20px);
+            }
+            75% {
+                transform: translateX(-10px) translateY(0px);
+            }
+            100% {
+                transform: translateX(20px) translateY(-20px);
+            }
+        }
+        .text-404 {
+            margin-top: 20rem;
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+            font-size: 2em;
+            text-align: center;
+        
+}
+        

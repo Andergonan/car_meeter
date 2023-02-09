@@ -1,0 +1,40 @@
+.auth-form {
+    width: 30%;
+    margin: 0 auto;
+    text-align: left;
+    padding: 2em;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0.4em;
+}
+    .auth-form input[type="text"],
+    .auth-form input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 1em;
+        box-sizing: border-box;
+        border-radius: 1em;
+        border: none;
+        outline: none;
+        text-align: center;
+    }
+    .auth-form input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 1em;
+        background-color: #ff3737;
+        color: white;
+        border: none;
+        border-radius: 1em;
+        cursor: pointer;
+        transition: 0.5s ease;
+    }
+    .auth-form input[type="submit"]:hover {
+        transition: 0.5s ease;
+        background-color: #7c3535;
+    }
+    .auth-form label {
+        display: block;
+        margin-bottom: 0.5em;
+        font-weight: bold;
+}
