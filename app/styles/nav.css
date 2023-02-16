@@ -33,8 +33,10 @@ nav .top-nav-btn-group {
 /* mobile navigation */
 .mobile-top-nav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #42424258;
+    box-shadow: 0px 5px 10px #69696946;
     position: relative;
+    text-align: center;
 }
     .mobile-top-nav #mobile-top-nav-links {
       display: none;
@@ -54,12 +56,15 @@ nav .top-nav-btn-group {
       top: 0;
     }
     .mobile-top-nav a:hover {
-      background-color: #ddd;
+      background-color: #ff3737b4;
       color: black;
     }
     .active {
-      background-color: rgb(63, 63, 63);
+      background-color: none;
       color: white;
+    }
+    #logo {
+      font-family: 'Dancing Script', 'cursive';
     }
     @media (min-width: 900px) {
       .mobile-top-nav {

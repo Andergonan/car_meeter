@@ -164,11 +164,18 @@
             }
         }
         .text-404 {
-            margin-top: 20rem;
+            margin-top: 2rem;
             color: #fff;
-            font-family: 'Roboto', sans-serif;
             font-size: 2em;
             text-align: center;
-        
+        }
+        @media(max-width: 900px) {
+            .road {
+                margin-top: 4em;
+                height: 10rem;
+                width: 22rem;
+                border-radius: 6em;
+            }
 }
+
         

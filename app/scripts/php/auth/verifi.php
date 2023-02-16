@@ -13,7 +13,7 @@
         $mysql->close();
         $conn->close();
 
-        $_SESSION['error_message'] = 'Registrace proběhla úspěšně, nyní se můžete přihlásit!';
+        $_SESSION['info_message'] = 'Registrace proběhla úspěšně, nyní se můžete přihlásit!';
         header('Location: http://localhost/car_meeter/login');
         exit;
     } else {

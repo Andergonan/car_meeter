@@ -1,12 +1,26 @@
 # Car Meeter
-- *version 0.6.7*
-- *last update 09.02.2023*
+- *version 0.7.5*
+- *last update 16.02.2023*
 
 ## Rozcestník
 - *[konvence](docs/konvence.md)*
 - *[dev documentation](docs/dev.md)*
 
 ## Version log
+
+### Co je nového ve verti 0.7.5
+- oprava navigace pro přihlášené
+- oprava odhlašování
+    - úprava scryptů *template.php*, *logout.php*, *auth_functions.php*
+- úprava fragmentu *logout.html*
+- úprava stylování
+- úprava dokumentace
+- úprava fragmentu *dashboard.html*
+- přidána funkce pro kontrolu hesla
+    - only server-side
+    - pokud se hesla neshodují, tak se registrační formulář neodešle
+- úprava animace na fragmentu 404
+    - nyní je animce responzibilní
 
 ### Co je nového ve verzi 0.6.7
 - úprava registrace + DB

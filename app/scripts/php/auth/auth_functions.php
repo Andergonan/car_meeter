@@ -48,8 +48,12 @@
     }
 
     function logoutMe() {
-
+        
+        session_start();
         session_destroy();
+        session_start();
+        $_SESSION['info_message'] = 'Byli jste úspěšně odhlášeni!';
         header("Location: http://localhost/car_meeter/login");
+        exit;
     }
 ?>

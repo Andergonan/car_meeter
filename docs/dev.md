@@ -13,6 +13,40 @@
 
 
 ## Přihlášení uživatele
+1) *template.php* přesměrovává na fragment *login.html*
+2) `<form/>` volá scripty authorization
+3) po úspěšném přihlášení je uživateli spuštěna session pro přihlášené
+
+- uižvatel je přihlášen pouze tehdy, zadá-li správné přihlašovací údaje
+
+*login.php*
+```
+    <?php 
+        if ($mysql->num_rows > 0) {
+        $mysql->bind_result($id, $password);
+        $mysql->fetch();
+
+            if (password_verify($_POST['password'], $password)) {
+
+                session_regenerate_id();
+                $_SESSION['loggedin'] = TRUE;
+                $_SESSION['name'] = $_POST['username'];
+                $_SESSION['id'] = $id;
+                header('Location: http://localhost/car_meeter/login_home');
+            } else {
+
+                $_SESSION['error_message'] = 'Zadané přihlašovací údaje jsou nesprávné!';
+                header("Location: http://localhost/car_meeter/login");
+                exit;
+            }
+        } else {
+            
+            $_SESSION['error_message'] = 'Zadané přihlašovací údaje jsou nesprávné!';
+            header('Location: http://localhost/car_meeter/login');
+            exit;
+        }
+    ?>
+```
 
 ## Registrace uživatele
 
