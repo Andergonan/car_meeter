@@ -10,7 +10,6 @@
         $_SESSION['error_message'] = 'Vyplňte prosím všechny pole!';
         header('Location: http://localhost/car_meeter/signup');
         exit;
-    
     } else if (empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
         
         $_SESSION['error_message'] = 'Vyplňte prosím všechny pole!';
@@ -34,6 +33,11 @@
     } else if (preg_match("/[\s\d\W]+/", $_POST['firstname']) || preg_match("/[\s\d\W]+/", $_POST['lastname'])) {
 
         $_SESSION['error_message'] = 'Neplatný formát jména, nebo příjmení!';
+        header('Location: http://localhost/car_meeter/signup');
+        exit;
+    } else if ($_POST['password'] != $_POST['password-check']) {
+        
+        $_SESSION['error_message'] = 'Hesla se neshodují!';
         header('Location: http://localhost/car_meeter/signup');
         exit;
     }

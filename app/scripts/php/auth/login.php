@@ -5,8 +5,10 @@
     require('../db_conn.php');
 
     if (!isset($_POST['username'], $_POST['password'])) {
-  
-        echo 'Vyplňte prosím obě pole!';
+
+        $_SESSION['error_message'] = 'Vyplňte prosím obě pole!';
+        header("Location: http://localhost/car_meeter/login");
+        exit;
     }
 
     if ($mysql = $conn->prepare('SELECT id, password FROM users WHERE username = ?')) {

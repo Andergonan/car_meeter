@@ -1,28 +1,51 @@
 /* fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 
 /* other styles */
-@import"./nav.css";
-@import"./form.css";
-@import"./404.css";
+@import"./nav.css?verze=2";
+@import"./forms.css?verze=10.61";
+@import"./404.css?verze=11";
+@import"./dashboard.css?verze=2.4";
 
 body {
     margin: 0px;
-    background-color: #2b2b2b;
+    background-color: #181930;
 }
 
 .container {
+    max-width: 1200px;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    margin-left: auto; 
+    margin-right: auto;
+    overflow: hidden;
+    font-family: 'Roboto', 'san-serif';
+}
+
+.flex-content {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
-    margin-top: 5rem;
-    margin-left: auto; 
-    margin-right: auto;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-.center-content {
-    text-align: center;
+.stripe {
+    position: fixed;
+    top: 70%;
+    left: -20%;
+    right: -20%;
+    z-index: -1;
+    min-width: 100%;
+    height: 10%;
+    transform: rotate(-30deg);
+    background: #ecab28;
+}
+    #second-stripe {
+        top: 90%;
 }
 
 header {
@@ -31,12 +54,14 @@ header {
     justify-content: space-between;
     width: auto;
     height: 3rem;
-    background-color: rgb(63, 63, 63);
+    background-color: #42424258;
+    box-shadow: 0px 5px 10px #69696946;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
 }
     .header-logo {
-        font-family: 'Roboto', sans-serif;
         font-size: 2em;
-        color: white;
+        font-family: 'Dancing Script', 'cursive';
         cursor: default;
         margin-left: 3rem;
     }
@@ -45,3 +70,25 @@ header {
         display: none;
     }
 }
+
+.system-mess {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    font-size: 0.8em;
+    font-family: 'Roboto', 'sans-serif';
+    color: #fff;
+    border: none;
+    border-radius: 1em;
+    padding: 10px;
+    margin-top: 2em;
+    width: 15rem;
+    max-width: 50%;
+}
+    #error-mess {
+        background: #f8001580;
+    }
+    #info-mess {
+        background: #45bbff83;
+    }

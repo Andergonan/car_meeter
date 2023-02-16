@@ -1,5 +1,9 @@
 <form class="auth-form" action="app/scripts/php/auth/signup.php" method="post" autocomplete="off">
 
+    <div>
+        Registrace
+    </div>
+
     <label for="firstname"></label>
     <input type="text" name="firstname" placeholder="Jméno" id="firstname" required>
 
@@ -14,6 +18,12 @@
     
     <label for="password"></label>
     <input type="password" name="password" placeholder="Heslo" id="password" required>
+
+    <label for="password-check"></label>
+    <input type="password" name="password-check" placeholder="Heslo znovu" id="password-check" required>
     
     <input type="submit" value="Registrovat">
+
+    <div id="form-info">Máte již účet? <a href="http://localhost/car_meeter/login">Přihlaste se!</a></div>
+
 </form>

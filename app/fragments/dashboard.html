@@ -1,0 +1,52 @@
+<div class="flex-content">
+    <span class="dashboard-title"><h1>Dashboard - {username}</h1></span>
+    <div class="dashboard-nav">
+        <button>Uspořádat sraz</button>
+        <button>Mé srazy</button>
+        <button>Nastavení profilu</button>
+    </div>
+
+    <div class="section">
+        <div class="calendar">
+            <span>Můj kalendář akcí</span>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="meet-form">
+        <form action="" method="post" autocomplete="off">
+            <h2>Nový sraz</h2>
+            
+            <label for="title">Název srazu</label>
+            <input type="text" name="title" id="title" placeholder="Název srazu" required>
+                    
+            <label for="car-specifications">Vhodné pro</label>
+            <select name="car-specifications" id="car-specifications">
+                <option value="all-cars">Všechny vozy</option>
+                <option value="only-tuned-cars">Pouze upravené</option>
+                <option value="sport-cars">Pouze sportovní</option>
+                <option value="family-cars">Pouze kombi</option>
+                <option value="jdm-cars">Pouze JDM</option>
+            </select>
+        
+            <label for="datetime">Datum a čas konnání</label>
+            <input type="datetime-local" name="datetime" id="datetime">
+        
+            <label for="town">Město</label>
+            <input type="text" name="town" id="town" placeholder="Rockport" required>
+                            
+            <label for="address">Ulice a čp.</label>
+            <input type="text" name="address" id="address" placeholder="Downtown 210" required>
+        
+    
+            <label for="gps">GPS souřadnice</label>
+            <input type="text" name="gps" id="gps" placeholder="..." required>
+    
+            <!--<label for="description">Krátký popis srazu</label>
+            <textarea name="description"  id="description"></textarea>-->
+            
+            <input type="submit" value="Vytvořit sraz">
+        </form>
+    </div>
+    
+</div>
