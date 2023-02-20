@@ -51,25 +51,20 @@
         color: white;
 }
 
-.meet-form {
-    background-color: #7c3535;
-    
+.meet-form form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2em;
+    box-sizing: border-box;
+    border-radius: 2.3em;
+    border: none;
+    background-color: #383440;
+    text-align: center;
 }
-    .meet-form form {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2em;
-        box-sizing: border-box;
-        border-radius: 2.3em;
-        border: none;
-        background-color: #ffffff1e;
-        text-align: center;
-    }
-    .auth-form div {
+    .meet-form h2 {
         color: #fff;
-        padding: 1em;
     }
-    .meet-form input {
+    .meet-form input, select {
         width: 100%;
         padding: 10px;
         margin-bottom: 1em;
@@ -78,6 +73,14 @@
         border: none;
         outline: none;
         text-align: center;
+    }
+    .meet-form textarea {
+        resize: none;
+        width: 50%;
+        height: 10em;
+        border-radius: 1em;
+        outline: none;
+        padding: 10px;
     }
     .meet-form input[type="submit"] {
         margin-top: 1em;

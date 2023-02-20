@@ -24,13 +24,17 @@ END;
 /*INSERT INTO `car_meeter`.`users` (`username`,  `email`, `password`) VALUES
 ('testuser', 'testuser@email.com', '$2y$10$qn9f7Q3oPTFMKHSIUUFyQeRHrp8U3o.EEbGooUyQIS/spYKoyF8O.');*/
 
-/*CREATE TABLE IF NOT EXISTS `car_meeter`.`meets` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `title` varchar(20) NOT NULL,
-    `description` varchar(1000) NOT NULL, 
-    `date`
-    `time`
-    `place`
-    `participants`
-    `owner`
-)*/
+CREATE TABLE IF NOT EXISTS `car_meeter`.`meets` (
+  `meet_id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(50) NOT NULL,
+  `title` VARCHAR(50) NOT NULL,
+  `organizing` VARCHAR(50) NOT NULL,
+  `car_specs` VARCHAR(50) NOT NULL,
+  `datetime` DATETIME,
+  `town` VARCHAR(50),
+  `address` VARCHAR(50),
+  `place` VARCHAR(50),
+  `gps_location` VARCHAR(200),
+  `description` VARCHAR(500),
+  PRIMARY KEY (`meet_id`)
+)ENGINE=InnoDB;

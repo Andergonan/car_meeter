@@ -1,5 +1,5 @@
 <div class="flex-content">
-    <span class="dashboard-title"><h1>Dashboard - {username}</h1></span>
+    <span class="dashboard-title"><h1>Dashboard - {nick}</h1></span>
     <div class="dashboard-nav">
         <button>Uspořádat sraz</button>
         <button>Mé srazy</button>
@@ -13,40 +13,61 @@
         </div>
     </div>
 
-    <div class="meet-form">
-        <form action="" method="post" autocomplete="off">
-            <h2>Nový sraz</h2>
+    <div class="section">
+        <div class="meet-form">
+            <form action="app/scripts/php/meets/new_meet.php" method="post" autocomplete="off">
+                <h2>Nový sraz</h2>
+                
+                <input type="text" name="title" id="title" placeholder="Název srazu" required>
+
+                <label for="organizing"><i class="fa-solid fa-road-barrier"></i> Sraz je</label>
+                <select name="organizing" id="organizing">
+                    <option value="fa-solid fa-road-barrier">Organizovaný</option>
+                    <option value="fa-solid fa-road-circle-exclamation">Volný</option>
+                </select>
+                        
+                <label for="car_specs"><i class="fa-solid fa-car"></i> Vhodné pro</label>
+                <select name="car_specs" id="car_specs">
+                    <option value="Všechny vozy">Všechny vozy</option>
+                    <option value="Pouze upravené">Pouze upravené</option>
+                    <option value="Pouze sportovní">Pouze sportovní</option>
+                    <option value="Pouze kombi">Pouze kombi</option>
+                    <option value="Pouze JDM">Pouze JDM</option>
+                </select>
             
-            <label for="title">Název srazu</label>
-            <input type="text" name="title" id="title" placeholder="Název srazu" required>
-                    
-            <label for="car-specifications">Vhodné pro</label>
-            <select name="car-specifications" id="car-specifications">
-                <option value="all-cars">Všechny vozy</option>
-                <option value="only-tuned-cars">Pouze upravené</option>
-                <option value="sport-cars">Pouze sportovní</option>
-                <option value="family-cars">Pouze kombi</option>
-                <option value="jdm-cars">Pouze JDM</option>
-            </select>
-        
-            <label for="datetime">Datum a čas konnání</label>
-            <input type="datetime-local" name="datetime" id="datetime">
-        
-            <label for="town">Město</label>
-            <input type="text" name="town" id="town" placeholder="Rockport" required>
-                            
-            <label for="address">Ulice a čp.</label>
-            <input type="text" name="address" id="address" placeholder="Downtown 210" required>
-        
-    
-            <label for="gps">GPS souřadnice</label>
-            <input type="text" name="gps" id="gps" placeholder="..." required>
-    
-            <!--<label for="description">Krátký popis srazu</label>
-            <textarea name="description"  id="description"></textarea>-->
+                <label for="datetime"><i class="fa-regular fa-calendar-days"></i> Datum a čas konnání</label>
+                <input type="datetime-local" name="datetime" id="datetime">
             
-            <input type="submit" value="Vytvořit sraz">
-        </form>
+                <label for="town"><i class="fa-solid fa-city"></i> Město</label>
+                <input type="text" name="town" id="town" placeholder="Rockport" required>
+                                
+                <label for="address"><i class="fa-solid fa-street-view"></i> Ulice a čp.</label>
+                <input type="text" name="address" id="address" placeholder="Downtown 210" required>
+            
+                <label for="place"><i class="fa-solid fa-map-location-dot"></i> Umístnění</label>
+                <select name="place" id="place">
+                    <option value="fa-solid fa-gas-pump">Čerpací stanice</option>
+                    <option value="fa-solid fa-cart-shopping">Obchodní centrum</option>
+                    <option value="fa-solid fa-square-parking">Parkoviště</option>
+                    <option value="fa-solid fa-plane-departure">Letiště</option>
+                    <option value="fa-solid fa-road">Ulice města</option>
+                </select>
+
+                <label for="gps_location"><i class="fa-solid fa-location-arrow"></i> GPS souřadnice</label>
+                <input type="text" name="gps_location" id="gps_location" placeholder="volitelné, usnadňuje však nalezení">
+        
+                <label for="description">Krátký popis srazu</label>
+                <textarea name="description" id="description"></textarea>
+                
+                <input type="submit" value="Vytvořit sraz">
+            </form>
+        </div>
     </div>
-    
+
+    <div class="section">
+        <div clas="user-settings">
+
+        </div>
+    </div>
+
 </div>
