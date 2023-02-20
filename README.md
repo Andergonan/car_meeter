@@ -1,6 +1,6 @@
 # Car Meeter
-- *version 0.7.5*
-- *last update 16.02.2023*
+- *version 0.8.9*
+- *last update 20.02.2023*
 
 ## Rozcestník
 - *[konvence](docs/konvence.md)*
@@ -8,7 +8,16 @@
 
 ## Version log
 
-### Co je nového ve verti 0.7.5
+## Co je nového ve verzi 0.8.9
+- vyřešeno Plánování srazů #19
+- úprava dokumentace
+- úprava databáze
+    - přidání nové tabulky "meets" do schématu
+- úprava fragmentu *dashboard.html*
+    - stylování
+- úprava fragmentu *home.html*
+
+### Co je nového ve verzi 0.7.5
 - oprava navigace pro přihlášené
 - oprava odhlašování
     - úprava scryptů *template.php*, *logout.php*, *auth_functions.php*

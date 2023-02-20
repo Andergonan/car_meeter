@@ -6,7 +6,7 @@
 
 /* other styles */
 @import"./nav.css?verze=2";
-@import"./forms.css?verze=10.61";
+@import"./forms.css?verze=10.62";
 @import"./404.css?verze=11";
 @import"./dashboard.css?verze=2.4";
 
@@ -33,6 +33,16 @@ body {
     gap: 2rem;
 }
 
+.section {
+    max-width: 80%;
+    min-width: 80%;
+    background: #ffffff0a;
+    backdrop-filter: blur(30px);
+    border: none;
+    border-radius: 1em;
+    padding: 20px;
+}
+
 .stripe {
     position: fixed;
     top: 70%;
@@ -46,6 +56,49 @@ body {
 }
     #second-stripe {
         top: 90%;
+}
+
+.meets-table-container {
+    max-width: 800px;
+    padding: 2em;
+    margin: 0 auto;
+    border: none;
+    border-radius: 2.3em;
+    background-color: #383440;
+    text-align: center;
+    overflow: auto;
+}
+    .meets-table-container div {
+        border-bottom: 1px solid #ff0000;
+        color: #fff;
+    }
+    .meets-table-container table {
+        width: 100%;
+        margin: 1em auto;
+        text-align: center;
+        table-layout: fixed;
+    }
+    .meets-table-container th, td {
+        max-width: 100%;
+        background: #181930;
+        color: #ffffff;
+        word-wrap: break-word;
+    }
+    .meets-table-container td {
+        overflow: auto;
+        padding: 15px;
+        background: none;
+        border-radius: 1em;
+    }
+    .meets-table-container p {
+        text-align: left;
+        color: #fff;
+    }
+    .meets-table-container #organizing {
+        background: #181930;
+        padding: 10px;
+        width: 20px;
+        border-radius: 100%;
 }
 
 header {

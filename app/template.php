@@ -6,7 +6,7 @@
 
     if (isset($_SESSION['loggedin'])) {
         $pages = [
-            "login_home" => "Meets",
+            "home" => "Meets",
             "dashboard" => "Dashboard",
             "logout" => "Odhlásit se",
             "404" => "404"
@@ -82,22 +82,31 @@
 
     // system forms
     $systemForm="";
-    if(isset($_SESSION['verifi_form'])) {
+    if (isset($_SESSION['verifi_form'])) {
         $systemForm = $_SESSION['verifi_form'];
         unset($_SESSION['verifi_form']);
     }
 
     // system messages
     $systemMess="";
-    if(isset($_SESSION['error_message'])) {
+    if (isset($_SESSION['error_message'])) {
         $systemMess = '<span class="system-mess" id="error-mess">'.$_SESSION['error_message'].'<span>';
         unset($_SESSION['error_message']);
     }
 
-    if(isset($_SESSION['info_message'])) {
+    if (isset($_SESSION['info_message'])) {
         $systemMess = '<span class="system-mess" id="info-mess">'.$_SESSION['info_message'].'<span>';
         unset($_SESSION['info_message']);
     }
+
+    // session info
+    $nick="";
+    if (isset($_SESSION['loggedin'])) {
+        $nick = '<span>'.$_SESSION['username'].'<span>';
+    }
+
+    // load meets
+    include_once('app/scripts/php/meets/load_meet.php');
 
     // save contet to variables
     $content = file_get_contents("app/fragments/$page.html");
@@ -112,6 +121,8 @@
     $pageTemplate = str_replace("{content}", $content, $pageTemplate);
     $pageTemplate = str_replace("{systemForm}", $systemForm, $pageTemplate);
     $pageTemplate = str_replace("{systemMess}", $systemMess, $pageTemplate);
+    $pageTemplate = str_replace("{nick}", $nick, $pageTemplate);
+    $pageTemplate = str_replace("{meets}", $meets, $pageTemplate);
     
     // dysplay content
     echo $pageTemplate;
