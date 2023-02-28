@@ -10,39 +10,52 @@ datetimeElement.value = datetimeString;
 const newMeetBtn = document.getElementById("new_meet");
 const myMeetBtn = document.getElementById("my_meets");
 const userSetBtn = document.getElementById("user_settings");
+const calendarBtn = document.getElementById("meet_calendar");
 const meetFormDiv = document.getElementById("meet_form");
 const myFormDiv = document.getElementById("my_form");
 const setFormDiv = document.getElementById("set_form");
+const calendar = document.getElementById("calendar");
 
 newMeetBtn.addEventListener("click", () => {
-  if (meetFormDiv.style.display === "none") {
+  if (meetFormDiv.style.display) {
     meetFormDiv.style.display = "block";
     myFormDiv.style.display = "none";
     setFormDiv.style.display = "none";
+    calendar.style.display = "none";
   } else {
-    meetFormDiv.style.display = "none";
     myFormDiv.style.display = "none";
     setFormDiv.style.display = "none";
+    calendar.style.display = "none";
   }
 });
+  
 myMeetBtn.addEventListener("click", () => {
-    if (myFormDiv.style.display === "block") {
-      myFormDiv.style.display = "none";
-    } else {
-      myFormDiv.style.display = "block";
-      meetFormDiv.style.display = "none";
-      setFormDiv.style.display = "none"
-    }
+  if (myFormDiv.style.display === "none") {
+    myFormDiv.style.display = "block";
+    meetFormDiv.style.display = "none";
+    setFormDiv.style.display = "none";
+    calendar.style.display = "none";
+  }
 });
+  
 userSetBtn.addEventListener("click", () => {
-    if (setFormDiv.style.display === "block") {
-      setFormDiv.style.display = "none";
-    } else {
-      setFormDiv.style.display = "block";
-      myFormDiv.style.display = "none";
-      meetFormDiv.style.display = "none";
-    }
+  if (setFormDiv.style.display === "none") {
+    setFormDiv.style.display = "block";
+    meetFormDiv.style.display = "none";
+    calendar.style.display = "none";
+    myFormDiv.style.display = "none";
+  }
 });
+
+calendarBtn.addEventListener("click", () => {
+  if (calendar.style.display === "none") {
+    calendar.style.display = "block";
+    meetFormDiv.style.display = "none";
+    setFormDiv.style.display = "none";
+    myFormDiv.style.display = "none";
+  }
+});
+
 
 /* funkce sidebar - dashboard */
 const profileBtn = document.getElementById("profile_btn");

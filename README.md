@@ -1,5 +1,5 @@
 # Car Meeter
-- *version 1.0.7*
+- *version 1.2.9*
 - *last update 28.02.2023*
 
 ## Rozcestník
@@ -7,6 +7,15 @@
 - *[dev documentation](docs/dev.md)*
 
 ## Version log
+
+## Co je nového ve verzi 1.2.9
+- úprava fragmentu *dashboard.hmtl*
+    - dashboard navigace (ikony)
+    - texty
+- úprava *style.css* hromadného class "flex-content"
+    - přidání atributu "color: #fff"
+- přidána nová funkce zápisu na sraz
+- přidána nová funkce odhlšení ze srazu
 
 ## Co je nového ve verzi 1.0.7
 - úprava stylování

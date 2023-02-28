@@ -1,15 +1,18 @@
 <div class="flex-content">
     <span class="dashboard-title"><h1>Dashboard - <span>{nick}</span></h1></span>
     <div class="dashboard-nav">
-        <button id="new_meet" title="Vytvořit sraz"><i class="fa-solid fa-plus"></i></button>
+        <button id="new_meet" title="Vytvořit sraz"><i class="fa-solid fa-circle-plus"></i></button>
+        <button id="meet_calendar" title="Kalendář akcí"><i class="fa-regular fa-calendar-check"></i></button>
         <button id="my_meets" title="Mé srazy"><i class="fa-solid fa-table"></i></button>
-        <button id="user_settings" title="Nastavení profilu"><i class="fa-solid fa-gear"></i></button>
+        <button id="user_settings" title="Nastavení profilu"><i class="fa-solid fa-user-gear"></i></button>
     </div>
 
     {systemMess}
 
+    {systemForm}
+
     <div class="section">
-        <div class="calendar">
+        <div id="calendar" class="calendar" style="display: none;">
             <span>Můj kalendář akcí</span>
             <div></div>
         </div>
@@ -89,6 +92,7 @@
     </div>
 
     <div id="set_form" class="section" style="display: none;">
+
         <div class="user-settings">
 
             <div class="sidebar">
@@ -99,6 +103,7 @@
             </div>
 
             <div class="sidebar-content">
+
                 <form id="profile_form" class="auth-form-change" action="app/scripts/php/auth/change_username.php" method="post" autocomplete="on">
                 
                     <label for="username">Uživatelské jméno</label>
@@ -145,4 +150,4 @@
         </div>
     </div>
 </div>
-<script src="app/scripts/js/dashboard.js?version=1.13"></script>
+<script src="app/scripts/js/dashboard.js?version=1.14"></script>
