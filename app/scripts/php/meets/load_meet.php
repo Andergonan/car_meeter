@@ -1,8 +1,9 @@
 <?php
     $meets="";
-    $mysql = "SELECT username, title, organizing, car_specs, datetime, town, address, place, gps_location, description FROM meets";
+    $mysql = "SELECT organizer, title, organizing, car_specs, datetime, town, address, place, gps_location, description FROM meets";
     $result = $conn->query($mysql);
     $conn->close();
+
     foreach ($result as $key) {
         $meets .= '
             <div class="section">
@@ -11,7 +12,7 @@
                     <table>
                         <tr>
                             <th><i class="fa-solid fa-car"></i> Specifikace</th>
-                            <th><i class="fa-regular fa-calendar-days"></i> Datum a čas konnání</th>
+                            <th><i class="fa-regular fa-calendar-days"></i> Sraz je</th>
                         <tr>
                             <td>'.$key['car_specs'].'</td>
                             <td>'.$key['datetime'].'</td>
@@ -32,10 +33,11 @@
                             <th>Popis</th>
                         </tr>
                         <tr>
-                            <td><p>'.$key['description'].'</p></td>
+                            <td><p>'.nl2br($key['description']).'</p></td>
                         </tr>
                     </table>
-                    <p>Pořadetel: '.$key['username'].'</p><p id="organizing"><i class="'.$key['organizing'].'"></i></p>
+                    <p><i class="fa-solid fa-id-card"></i> Pořadetel: '.$key['organizer'].'</p>
+                    <p id="organizing"><i class="'.$key['organizing'].'"></i></p>
                 </div>
             </div>';}
 ?>

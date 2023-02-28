@@ -9,6 +9,7 @@
             "home" => "Meets",
             "dashboard" => "Dashboard",
             "logout" => "Odhlásit se",
+            "personaldata" => "personaldata",
             "404" => "404"
         ];
     } else {
@@ -16,6 +17,7 @@
             "home" => "Meets",
             "signup" => "Registrace",
             "login" => "Přihlášení",
+            "personaldata" => "personaldata",
             "404" => "404"
         ];
     }
@@ -45,7 +47,7 @@
     // navigation
     $navigation="";
     foreach ($pages as $key => $val) {
-        if ($key == "404") {
+        if ($key == "404" || $key == "personaldata") {
             continue;
         } else if ($key == "home" || $key == "login_home") {
             $navigation .= '<a ' . ($pages == $key ? 'class="active" ' : '') . 'href="' . $key . '"><button>' . $val . ' <i class="fa-solid fa-gas-pump"></i></button></a>';
@@ -64,7 +66,7 @@
     // mobile navigation
     $mobilenav="";
     foreach ($pages as $key => $val) {
-        if ($key == "404") {
+        if ($key == "404" || $key == "personaldata") {
             continue;
         } else if ($key == "home" || $key == "login_home") {
             $mobilenav .= '<a ' . ($pages == $key ? 'class="active" ' : '') . 'href="' . $key . '">' . $val . ' <i class="fa-solid fa-gas-pump"></i></a>';
@@ -90,19 +92,25 @@
     // system messages
     $systemMess="";
     if (isset($_SESSION['error_message'])) {
-        $systemMess = '<span class="system-mess" id="error-mess">'.$_SESSION['error_message'].'<span>';
+        $systemMess = '<span class="system-mess" id="error-mess">'.$_SESSION['error_message'].'</span>';
         unset($_SESSION['error_message']);
     }
 
     if (isset($_SESSION['info_message'])) {
-        $systemMess = '<span class="system-mess" id="info-mess">'.$_SESSION['info_message'].'<span>';
+        $systemMess = '<span class="system-mess" id="info-mess">'.$_SESSION['info_message'].'</span>';
         unset($_SESSION['info_message']);
     }
 
-    // session info
+    // session info in span
     $nick="";
+    $firstName="";
+    $lastName="";
+    $mail="";
     if (isset($_SESSION['loggedin'])) {
-        $nick = '<span>'.$_SESSION['username'].'<span>';
+        $nick = $_SESSION['username'];
+        $firstName = $_SESSION['firstname'];
+        $lastName = $_SESSION['lastname'];
+        $mail = $_SESSION['email'];
     }
 
     // load meets
@@ -122,8 +130,11 @@
     $pageTemplate = str_replace("{systemForm}", $systemForm, $pageTemplate);
     $pageTemplate = str_replace("{systemMess}", $systemMess, $pageTemplate);
     $pageTemplate = str_replace("{nick}", $nick, $pageTemplate);
+    $pageTemplate = str_replace("{firstName}", $firstName, $pageTemplate);
+    $pageTemplate = str_replace("{lastName}", $lastName, $pageTemplate);
+    $pageTemplate = str_replace("{mail}", $mail, $pageTemplate);
     $pageTemplate = str_replace("{meets}", $meets, $pageTemplate);
     
-    // dysplay content
+    // display content
     echo $pageTemplate;
 ?>

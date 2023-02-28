@@ -1,3 +1,4 @@
+{systemMess}
 <form class="auth-form" action="app/scripts/php/auth/signup.php" method="post" autocomplete="off">
 
     <div>
@@ -21,9 +22,17 @@
 
     <label for="password-check"></label>
     <input type="password" name="password-check" placeholder="Heslo znovu" id="password-check" required>
-    
+
     <input type="submit" value="Registrovat">
 
     <div id="form-info">Máte již účet? <a href="http://localhost/car_meeter/login">Přihlaste se!</a></div>
+
+    <div id="form-info">
+        <label for="personal_data_agreement">*Souhlas se <a href="http://localhost/car_meeter/personaldata">Zpracováváním osobních údajů.</a></label>
+        <input type="checkbox" id="personal_data_agreement" name="personal_data_agreement" value="personal_data_agreement">
+        
+        <label for="email_agreement">*Souhlas se zasíláním ověřovacích kódů a bezpečnostních upozornění na uvedený e-mail.</label>
+        <input type="checkbox" id="email_agreement" name="email_agreement" value="email_agreement">
+    </div>
 
 </form>
