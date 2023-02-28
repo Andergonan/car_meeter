@@ -1,3 +1,19 @@
+input, select {
+    font-family: 'Open Sans', sans-serif;
+}
+    input[type="submit"], textarea{
+        font-family: 'Roboto', 'san-serif';
+}
+
+#form-info {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.8em;
+    color: #fff;
+}
+    #form-info a {
+        color: white;
+}
+
 .auth-form {
     max-width: 300px;
     margin: 0 auto;
@@ -42,13 +58,39 @@
         text-align: center;
 }
 
-#form-info {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.8em;
-    color: #fff;
+.user-settings form {
+    margin: 0 auto;
+    padding: 2em;
+    box-sizing: border-box;
 }
-    #form-info a {
-        color: white;
+    .user-settings label {
+        display: block;
+        margin-bottom: 0.5em;
+        color: #ffffff;
+        text-align: center;
+    }
+    .user-settings input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 1em;
+        box-sizing: border-box;
+        border-radius: 1em;
+        border: none;
+        outline: none;
+        text-align: center;
+        font-weight: bold;
+    }
+    .user-settings input[type="submit"] {
+        margin-top: 1em;
+        background-color: #ff3737;
+        color: #ffffff;
+        cursor: pointer;
+        font-weight: normal;
+        transition: 0.5s ease;
+    }
+    .user-settings input[type="submit"]:hover {
+        transition: 0.5s ease;
+        background-color: #7c3535;
 }
 
 .meet-form form {
@@ -58,13 +100,21 @@
     box-sizing: border-box;
     border-radius: 2.3em;
     border: none;
-    background-color: #383440;
+    /*background-color: #383440;*/
+    background: #3834407a;
     text-align: center;
 }
     .meet-form h2 {
         color: #fff;
     }
-    .meet-form input, select {
+    .meet-form label {
+        display: block;
+        margin-bottom: 0.5em;
+        color: #ffffff;
+        text-align: center;
+    }
+    .meet-form input, 
+    .meet-form select {
         width: 100%;
         padding: 10px;
         margin-bottom: 1em;
@@ -73,6 +123,28 @@
         border: none;
         outline: none;
         text-align: center;
+    }
+    .meet-form input[name="title"] {
+        font-weight: bold;
+        font-size: 17px;
+    }
+    .meet-form table {
+        width: 100%;
+        margin: 1em auto;
+        text-align: center;
+        table-layout: fixed;
+    }
+    .meet-form th, 
+    .meet-form td {
+        background: none;
+        margin: 1px auto;
+    }
+    .meet-form select,
+    .meet-form input[type="datetime-local"] {
+        cursor: pointer;
+    }
+    ::-webkit-calendar-picker-indicator {
+        cursor: pointer;
     }
     .meet-form textarea {
         resize: none;
@@ -93,10 +165,4 @@
     .meet-form input[type="submit"]:hover {
         transition: 0.5s ease;
         background-color: #7c3535;
-    }
-    .meet-form label {
-        display: block;
-        margin-bottom: 0.5em;
-        color: #ffffff;
-        text-align: center;
 }

@@ -9,6 +9,9 @@ CREATE TABLE IF NOT EXISTS `car_meeter`.`users` (
   `username` VARCHAR(50) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
   `password` VARCHAR(255) NOT NULL,
+  `personal_data_agreement` VARCHAR(50) NOT NULL,
+  `email_agreement` VARCHAR(50) NOT NULL,
+  `signup` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
@@ -26,7 +29,7 @@ END;
 
 CREATE TABLE IF NOT EXISTS `car_meeter`.`meets` (
   `meet_id` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(50) NOT NULL,
+  `organizer` VARCHAR(50) NOT NULL,
   `title` VARCHAR(50) NOT NULL,
   `organizing` VARCHAR(50) NOT NULL,
   `car_specs` VARCHAR(50) NOT NULL,
@@ -36,5 +39,7 @@ CREATE TABLE IF NOT EXISTS `car_meeter`.`meets` (
   `place` VARCHAR(50),
   `gps_location` VARCHAR(200),
   `description` VARCHAR(500),
+  `` VARCHAR(0),
+  `established` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`meet_id`)
 )ENGINE=InnoDB;

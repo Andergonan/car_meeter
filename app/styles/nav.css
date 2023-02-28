@@ -42,7 +42,7 @@ nav .top-nav-btn-group {
       display: none;
     }
     .mobile-top-nav a {
-      color: white;
+      color: #fff;
       padding: 14px 16px;
       text-decoration: none;
       font-family: 'Roboto', sans-serif;
@@ -61,7 +61,7 @@ nav .top-nav-btn-group {
     }
     .active {
       background-color: none;
-      color: white;
+      color: #fff;
     }
     #logo {
       font-family: 'Dancing Script', 'cursive';
@@ -70,4 +70,66 @@ nav .top-nav-btn-group {
       .mobile-top-nav {
         display: none;
     }
+}
+
+/* dashboard navigation */
+.dashboard-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+  .dashboard-nav button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin: 1em;
+    background-color: #ff3737c9;
+    border: none;
+    border-radius: 100%;
+    transition: 1s ease;
+  }
+  .dashboard-nav button:hover {
+    transition: 1s ease;
+    background-color: #7c3535;
+}
+button[title] {
+  background-color: red;
+}
+
+/* sidebar navigation */
+.sidebar {
+  height: 100%;
+  width: 155px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 2.3em;
+  border-bottom-left-radius: 2.3em;
+  background: #42424258;
+  overflow-x: hidden;
+}
+  .sidebar button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    margin-top: 2.4em;
+    border-radius: 0.4em;
+    border: 0px;
+    background: none;
+    transition: 0.5s ease;
+  }
+  .sidebar button:hover {
+    transition: 0.5s ease;
+    background-color: #7c3535;
+  }
+  .sidebar-content {
+    margin-left: 160px;
+    padding: 0px 10px;
 }

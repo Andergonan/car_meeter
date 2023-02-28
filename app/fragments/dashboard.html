@@ -1,10 +1,12 @@
 <div class="flex-content">
-    <span class="dashboard-title"><h1>Dashboard - {nick}</h1></span>
+    <span class="dashboard-title"><h1>Dashboard - <span>{nick}</span></h1></span>
     <div class="dashboard-nav">
-        <button>Uspořádat sraz</button>
-        <button>Mé srazy</button>
-        <button>Nastavení profilu</button>
+        <button id="new_meet" title="Vytvořit sraz"><i class="fa-solid fa-plus"></i></button>
+        <button id="my_meets" title="Mé srazy"><i class="fa-solid fa-table"></i></button>
+        <button id="user_settings" title="Nastavení profilu"><i class="fa-solid fa-gear"></i></button>
     </div>
+
+    {systemMess}
 
     <div class="section">
         <div class="calendar">
@@ -13,49 +15,67 @@
         </div>
     </div>
 
-    <div class="section">
+    <div id="meet_form" class="section">
         <div class="meet-form">
             <form action="app/scripts/php/meets/new_meet.php" method="post" autocomplete="off">
                 <h2>Nový sraz</h2>
                 
                 <input type="text" name="title" id="title" placeholder="Název srazu" required>
 
-                <label for="organizing"><i class="fa-solid fa-road-barrier"></i> Sraz je</label>
-                <select name="organizing" id="organizing">
-                    <option value="fa-solid fa-road-barrier">Organizovaný</option>
-                    <option value="fa-solid fa-road-circle-exclamation">Volný</option>
-                </select>
-                        
-                <label for="car_specs"><i class="fa-solid fa-car"></i> Vhodné pro</label>
-                <select name="car_specs" id="car_specs">
-                    <option value="Všechny vozy">Všechny vozy</option>
-                    <option value="Pouze upravené">Pouze upravené</option>
-                    <option value="Pouze sportovní">Pouze sportovní</option>
-                    <option value="Pouze kombi">Pouze kombi</option>
-                    <option value="Pouze JDM">Pouze JDM</option>
-                </select>
+                <table>
+                    <tr>
+                        <th><label for="organizing"><i class="fa-solid fa-road-barrier"></i> Sraz je</label></th>
+                        <th><label for="car_specs"><i class="fa-solid fa-car"></i> Vhodné pro</label></th>
+                        <th><label for="datetime"><i class="fa-regular fa-calendar-days"></i> Datum a čas</label></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="organizing" id="organizing">
+                                <option value="fa-solid fa-road-barrier">Organizovaný</option>
+                                <option value="fa-solid fa-road-circle-exclamation">Volný</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="car_specs" id="car_specs">
+                                <option value="Všechny vozy">Všechny vozy</option>
+                                <option value="Pouze upravené">Pouze upravené</option>
+                                <option value="Pouze sportovní">Pouze sportovní</option>
+                                <option value="Pouze kombi">Pouze kombi</option>
+                                <option value="Pouze JDM">Pouze JDM</option>
+                            </select>
+                        </td>
+                        <td><input type="datetime-local" name="datetime" id="datetime"></td>
+                    </tr>
+                </table>
             
-                <label for="datetime"><i class="fa-regular fa-calendar-days"></i> Datum a čas konnání</label>
-                <input type="datetime-local" name="datetime" id="datetime">
-            
-                <label for="town"><i class="fa-solid fa-city"></i> Město</label>
-                <input type="text" name="town" id="town" placeholder="Rockport" required>
-                                
-                <label for="address"><i class="fa-solid fa-street-view"></i> Ulice a čp.</label>
-                <input type="text" name="address" id="address" placeholder="Downtown 210" required>
-            
-                <label for="place"><i class="fa-solid fa-map-location-dot"></i> Umístnění</label>
-                <select name="place" id="place">
-                    <option value="fa-solid fa-gas-pump">Čerpací stanice</option>
-                    <option value="fa-solid fa-cart-shopping">Obchodní centrum</option>
-                    <option value="fa-solid fa-square-parking">Parkoviště</option>
-                    <option value="fa-solid fa-plane-departure">Letiště</option>
-                    <option value="fa-solid fa-road">Ulice města</option>
-                </select>
-
-                <label for="gps_location"><i class="fa-solid fa-location-arrow"></i> GPS souřadnice</label>
-                <input type="text" name="gps_location" id="gps_location" placeholder="volitelné, usnadňuje však nalezení">
-        
+                <table>
+                    <tr>
+                        <th><label for="town"><i class="fa-solid fa-city"></i> Město</label></th>
+                        <th><label for="address"><i class="fa-solid fa-street-view"></i> Ulice a čp.</label></th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="town" id="town" placeholder="Rockport" required></td>
+                        <td><input type="text" name="address" id="address" placeholder="Downtown 210" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <th><label for="place"><i class="fa-solid fa-map-location-dot"></i> Umístnění</label></th>
+                        <th><label for="gps_location"><i class="fa-solid fa-location-arrow"></i> GPS souřadnice</label></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select name="place" id="place">
+                                <option value="fa-solid fa-gas-pump">Čerpací stanice</option>
+                                <option value="fa-solid fa-cart-shopping">Obchodní centrum</option>
+                                <option value="fa-solid fa-square-parking">Parkoviště</option>
+                                <option value="fa-solid fa-plane-departure">Letiště</option>
+                                <option value="fa-solid fa-road">Ulice města</option>
+                            </select>
+                        </td>
+                        <td><input type="text" name="gps_location" id="gps_location" placeholder="volitelné, usnadňuje však nalezení"></td>
+                    </tr>
+                </table>
+                    
                 <label for="description">Krátký popis srazu</label>
                 <textarea name="description" id="description"></textarea>
                 
@@ -64,10 +84,65 @@
         </div>
     </div>
 
-    <div class="section">
-        <div clas="user-settings">
-
-        </div>
+    <div id="my_form" class="section" style="display: none;">
+        {myMeets}
     </div>
 
+    <div id="set_form" class="section" style="display: none;">
+        <div class="user-settings">
+
+            <div class="sidebar">
+                <button id="profile_btn"><i class="fa-solid fa-user"></i> Profil</button>
+                <button id="email_btn"><i class="fa-solid fa-at"></i> e-mail</button>
+                <button id="password_btn"><i class="fa-solid fa-key"></i> Heslo</button>
+                <button id="gdpr_btn"><i class="fa-solid fa-user-shield"></i> <a class="active" style="text-decoration: none;" href="http://localhost/car_meeter/personaldata" target="_blank">GDPR</a></button>
+            </div>
+
+            <div class="sidebar-content">
+                <form id="profile_form" class="auth-form-change" action="app/scripts/php/auth/change_username.php" method="post" autocomplete="on">
+                
+                    <label for="username">Uživatelské jméno</label>
+                    <input type="text" name="username" placeholder="{nick}" id="username" required>
+                    
+                    <input type="submit" value="Změnit">
+                    
+                </form>
+    
+                <form id="profile_form_name" class="auth-form-change" action="app/scripts/php/auth/change_name.php" method="post" autocomplete="on">
+                
+    
+                    <label for="firstname">Jméno</label>
+                    <input type="text" name="firstname" placeholder="{firstName}" id="firstname" required>
+                
+                    <label for="lastname">Příjmení</label>
+                    <input type="text" name="lastname" placeholder="{lastName}" id="lastname" required>
+                    
+                    <input type="submit" value="Změnit">
+                    
+                </form>
+    
+                <form id="email_form" class="auth-form-change" action="app/scripts/php/auth/change_email.php" method="post" autocomplete="on" style="display: none;">
+                
+                    <label for="email">e-mail</label>
+                    <input type="text" name="email" placeholder="{mail}" id="email" required>
+                    
+                    <input type="submit" value="Změnit">
+                    
+                </form>
+    
+                <form id="password_form" class="auth-form-change" action="app/scripts/php/auth/change_password.php" method="post" autocomplete="off" style="display: none;">
+                    
+                    <label for="password">Heslo</label>
+                    <input type="password" name="password" placeholder="Heslo" id="password" required>
+    
+                    <label for="password-check">Heslo znovu</label>
+                    <input type="password" name="password-check" placeholder="Heslo znovu" id="password-check" required>
+                    
+                    <input type="submit" value="Změnit">
+
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+<script src="app/scripts/js/dashboard.js?version=1.13"></script>

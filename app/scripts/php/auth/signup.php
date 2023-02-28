@@ -40,6 +40,41 @@
         $_SESSION['error_message'] = 'Hesla se neshodují!';
         header('Location: http://localhost/car_meeter/signup');
         exit;
+    } else if (empty($_POST['personal_data_agreement'] || $_POST['email_agreement'])) {
+
+        $_SESSION['error_message'] = 'Bez Vašeho souhlasu s výše uvedenými body, nemůže služba CarMeeter správně fungovat.';
+        header('Location: http://localhost/car_meeter/signup');
+        exit;
+    } else if ($_POST['personal_data_agreement'] != 'personal_data_agreement' || $_POST['email_agreement'] != 'email_agreement') {
+
+        $_SESSION['error_message'] = 'Bez Vašeho souhlasu s výše uvedenými body, nemůže služba CarMeeter správně fungovat.';
+        header('Location: http://localhost/car_meeter/signup');
+        exit;
+    } else if (strlen($_POST['firstname']) > 50) {
+
+        $_SESSION['error_message'] = 'Vaše jméno může obsahovat maximálně 50 znaků!';
+        header('Location: http://localhost/car_meeter/signup');
+        exit;
+    } else if (strlen($_POST['lastname']) > 50) {
+
+        $_SESSION['error_message'] = 'Vaše příjmení může obsahovat maximálně 50 znaků!';
+        header('Location: http://localhost/car_meeter/signup');
+        exit;
+    } else if (strlen($_POST['username']) > 50) {
+
+        $_SESSION['error_message'] = 'Vaše přezdívka může obsahovat maximálně 50 znaků!';
+        header('Location: http://localhost/car_meeter/signup');
+        exit;
+    } else if (strlen($_POST['email']) > 255) {
+
+        $_SESSION['error_message'] = 'Délka e-mailu může být maximálně 255 znaků!';
+        header('Location: http://localhost/car_meeter/signup');
+        exit;
+    } else if (strlen($_POST['password']) > 255) {
+
+        $_SESSION['error_message'] = 'Maximální délka hesla je 255 znaků!';
+        header('Location: http://localhost/car_meeter/signup');
+        exit;
     }
 
     if ($mysql = $conn->prepare('SELECT id, password FROM users WHERE username = ? OR email = ?')) {

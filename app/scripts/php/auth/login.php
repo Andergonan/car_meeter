@@ -11,7 +11,7 @@
         exit;
     }
 
-    if ($mysql = $conn->prepare('SELECT id, password FROM users WHERE username = ?')) {
+    if ($mysql = $conn->prepare('SELECT id, firstname, lastname, email, password FROM users WHERE username = ?')) {
 
         $mysql->bind_param('s', $_POST['username']);
         $mysql->execute();
@@ -20,7 +20,7 @@
     }
     
     if ($mysql->num_rows > 0) {
-        $mysql->bind_result($id, $password);
+        $mysql->bind_result($id, $firstname, $lastname, $email, $password);
         $mysql->fetch();
 
         if (password_verify($_POST['password'], $password)) {
@@ -28,6 +28,9 @@
             session_regenerate_id();
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['username'] = $_POST['username'];
+            $_SESSION['firstname'] = $firstname;
+            $_SESSION['lastname'] = $lastname;
+            $_SESSION['email'] = $email;
             $_SESSION['id'] = $id;
             header('Location: http://localhost/car_meeter/home');
         } else {

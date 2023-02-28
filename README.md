@@ -1,12 +1,42 @@
 # Car Meeter
-- *version 0.8.9*
-- *last update 20.02.2023*
+- *version 1.0.7*
+- *last update 28.02.2023*
 
 ## Rozcestník
 - *[konvence](docs/konvence.md)*
 - *[dev documentation](docs/dev.md)*
 
 ## Version log
+
+## Co je nového ve verzi 1.0.7
+- úprava stylování
+    - fragment *dashboard.html*
+        - úprava formuláře pro nové srazy
+    - Pozadí meet-form
+- úprava fragmentu *dashboard.html*
+- nalezen a následně opraven bug při zobrazení 'error_message'
+- úprava zabezpečení posílaných dat formulářem
+    - script *new_meet.php* & script *signup.php*
+        - přidání kontroly maximálního počtu znaků
+- GDPR
+    - úprava zabezpečení
+    - nový fragment *personaldata.html*
+    - upravení stylů
+    - úprava registračního formuláře
+    - úprava auth scriptů
+    - úprava DB
+- úprava dokumentace
+- úprava DB
+    - přejmenování v DB Meets sloupce "username" na "organizer"
+- úprava scriptu *load_meet.php*
+    - přidání funkce `nl2br()`, pro zamlamování vypisovaných dat z DB
+- úprava js scryptu *dashboard.js*
+    - automatické vyplnění aktuálního času
+    - zprovnění tlačítka na dasboardu
+- přidána funkce, pro změnu osobních údajů
+    - možnost změny emailu, jména, příjmení, uživatelského jména a hesla
+    - pro změnu e-mailu, je nutno zadat ověřovací kód z nové adresy
+- úprava responsivity
 
 ## Co je nového ve verzi 0.8.9
 - vyřešeno Plánování srazů #19
@@ -69,7 +99,7 @@
     - ověřování e-mail adres
     - **OVĚŘENÍ NEFUGUJE, PŘEDMĚT DALŠÍHO UPDATU!!!**
 - odesílání ověřovacího e-mailu novému uživateli
-    - pro testovací účely je využívána schránka a [SMTP seznam.cz](https://napoveda.seznam.cz/cz/imap-pop3-smtp/)
+    - pro testovací účely je využívána schránka a SMTP gmail.com
 
 ### Co je nového ve verzi 0.0.8
 - kontrola zadávaného hesla

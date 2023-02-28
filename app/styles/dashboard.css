@@ -11,3 +11,9 @@
         height: 1px;
         background-color: #ff0000;
 }
+
+.user-settings {
+    min-height: 20em;
+    border-radius: 2.3em;
+    background: #3834407a;
+}

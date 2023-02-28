@@ -1,0 +1,12 @@
+#contractual {
+    color: #fff;
+}
+    #contractual h2,
+    #contractual h3 {
+        text-align: center;
+    }
+    #contractual p {
+        text-align: left;
+        padding: 10px;
+        font-size: 15px;
+    }
