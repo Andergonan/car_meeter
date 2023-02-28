@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `car_meeter`.`meets` (
   `place` VARCHAR(50),
   `gps_location` VARCHAR(200),
   `description` VARCHAR(500),
-  `` VARCHAR(0),
+  `party` VARCHAR(10000),
   `established` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`meet_id`)
 )ENGINE=InnoDB;

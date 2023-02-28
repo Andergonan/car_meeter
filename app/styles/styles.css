@@ -6,7 +6,7 @@
 
 /* other styles */
 @import"./nav.css?verze=2.23";
-@import"./forms.css?verze=10.69";
+@import"./forms.css?verze=10.7";
 @import"./404.css?verze=11";
 @import"./dashboard.css?verze=2.46";
 @import"./contractual.css";
@@ -24,6 +24,7 @@ body {
     margin-right: auto;
     overflow: hidden;
     font-family: 'Roboto', 'san-serif';
+    color: #fff;
 }
 
 .flex-content {
