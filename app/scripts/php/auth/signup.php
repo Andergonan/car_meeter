@@ -30,7 +30,7 @@
         $_SESSION['error_message'] = "Neplatný formát e-mailu!";
         header('Location: http://localhost/car_meeter/signup');
         exit;
-    } else if (preg_match("/[\s\d\W]+/", $_POST['firstname']) || preg_match("/[\s\d\W]+/", $_POST['lastname'])) {
+    } else if (!preg_match("/^[a-zA-ZáčďéěíňóřšťúůýžČĎŇŘŠŤŽ]+$/u", $_POST['firstname']) || !preg_match("/^[a-zA-ZáčďéěíňóřšťúůýžČĎŇŘŠŤŽ]+$/u", $_POST['lastname'])) {
 
         $_SESSION['error_message'] = 'Neplatný formát jména, nebo příjmení!';
         header('Location: http://localhost/car_meeter/signup');

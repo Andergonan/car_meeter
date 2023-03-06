@@ -11,18 +11,16 @@
 
     {systemForm}
 
-    <div class="section">
-        <div id="calendar" class="calendar" style="display: none;">
-            <span>Můj kalendář akcí</span>
-            <div></div>
-        </div>
+    <div id="calendar" style="display: none; text-align: center; max-width: 100%">
+        <h2>Kalendář akcí</h2>
+        {actionCalendar}
     </div>
 
     <div id="meet_form" class="section">
         <div class="meet-form">
             <form action="app/scripts/php/meets/new_meet.php" method="post" autocomplete="off">
                 <h2>Nový sraz</h2>
-                
+
                 <input type="text" name="title" id="title" placeholder="Název srazu" required>
 
                 <table>
@@ -34,8 +32,8 @@
                     <tr>
                         <td>
                             <select name="organizing" id="organizing">
-                                <option value="fa-solid fa-road-barrier">Organizovaný</option>
-                                <option value="fa-solid fa-road-circle-exclamation">Volný</option>
+                                <option value="&lt;i title=&quot;Organizovaný&quot; class=&quot;fa-solid fa-road-barrier&quot;&gt;&lt;/i&gt;">Organizovaný</option>
+                                <option value="&lt;i title=&quot;Volný&quot; class=&quot;fa-solid fa-road-circle-exclamation&quot;&gt;&lt;/i&gt;"></i>Volný</option>
                             </select>
                         </td>
                         <td>
@@ -87,7 +85,8 @@
         </div>
     </div>
 
-    <div id="my_form" class="section" style="display: none;">
+    <div id="my_form" style="display: none; text-align: center; max-width: 100%">
+        <h2>Mé srazy</h2>
         {myMeets}
     </div>
 

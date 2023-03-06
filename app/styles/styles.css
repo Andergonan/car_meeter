@@ -8,7 +8,7 @@
 @import"./nav.css?verze=2.23";
 @import"./forms.css?verze=10.7";
 @import"./404.css?verze=11";
-@import"./dashboard.css?verze=2.46";
+@import"./dashboard.css?verze=2.47";
 @import"./contractual.css";
 
 body {
@@ -110,7 +110,29 @@ body {
         padding: 10px;
         width: 20px;
         border-radius: 100%;
-}
+    }
+    .meets-table-container #meet-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-top: 1px solid rgba(103, 103, 103, 0.443);
+        border-bottom: none;
+    }
+        .meets-table-container button {
+            margin: 1em;
+            padding: 10px;
+            border: none;
+            border-radius: 1em;
+            cursor: pointer;
+            color: #fff;
+            background-color: #00b3ff;
+            transition: 1s ease;
+        }
+        .meets-table-container button:hover {
+
+            background-color: #00b3ff42;
+            transition: 1s ease;
+        }
 
 header {
     display: flex;
