@@ -1,12 +1,41 @@
 # Car Meeter
-- *version 1.2.9*
-- *last update 28.02.2023*
+- *version 1.6.9*
+- *last update 06.03.2023*
 
 ## Rozcestník
 - *[konvence](docs/konvence.md)*
 - *[dev documentation](docs/dev.md)*
 
 ## Version log
+
+## Co je nového ve verzi 1.6.9
+- úprava ikony zančící, zda je sraz organizovaný, nebo volný
+    - přidání popisu
+- nalezen a opraven bug v DB
+    - "není možno, se zapsat na sraz"
+    - chybějící definice NOT NULL u party
+- nový způsobu načtení komponets
+    - nový script *load_data.php*
+    - úprava scriptu *load_meet.php*
+- nová funkce - načtení vlastních srazů
+    - sript *load_my_meet.php*
+- nová funkce - možnost úpravy vlastních srazů
+    - script *update_meet.php*
+- zabezpečení vstupů formuláře pro zakládání nových srazů
+- zabezpečení meets
+    - přidáno hash_meet (každý sraz má svůj hash)
+    - při úpravě se ověřuje meet_id, meet_hash a organizer_id
+- úprava stylování
+- nalezen a opraven bug - REGISTRACE UŽIVATELŮ
+    - při registraci nemohl uživatel zadat jméno s diakritikou
+    - vyřešeno úpravou regulárního výrazu
+    - úprava v *signup.php*
+- aktualizace loga
+- nalezen a opraven bug - ÚPRAVA SRAZŮ
+    - uživatel nemohl uložit upravená data, dokud nezměnil název srazu
+    - upraven script *update_meet.php*
+- přidán kalendář akcí
+- úprava dokumentace (stále nekompletní)
 
 ## Co je nového ve verzi 1.2.9
 - úprava fragmentu *dashboard.hmtl*

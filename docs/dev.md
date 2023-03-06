@@ -1,5 +1,6 @@
 # Dev documentation
-
+- *[Template systém](#template-systém)*
+    - *[Routing](#routing)*
 - *[Přihlášení uživatele](#přihlášení-uživatele)*
 - *[Registrace uživatele](#registrace-uživatele)*
     - *[Ověření hesla](#ověření-hesla)*
@@ -7,9 +8,8 @@
         - *[Ověření e-mailu](#ověření-e-mailu)*
 - *[SMTP a jeho nastavení](#smtp-a-jeho-nastavení)*
 
-## "Framework"
+## Template systém
 ### Routing
-### Template system
 
 
 ## Přihlášení uživatele
@@ -17,7 +17,7 @@
 2) `<form/>` volá scripty authorization
 3) po úspěšném přihlášení je uživateli spuštěna session pro přihlášené
 
-- uižvatel je přihlášen pouze tehdy, zadá-li správné přihlašovací údaje
+- uživatel je přihlášen pouze tehdy, zadá-li správné přihlašovací údaje
 
 *login.php*
 ```
@@ -74,7 +74,7 @@
 - e-mailová adresa je schválena pouze tehdy...
     1) e-mailová adresa není v databázi již uložena
     2) splňuje parametry e-mailové adresy (jmeno@domena.cz)
-- Před úspěšnou registrací, je novému uživateli na jeho uvedenou e-mailovou adresu zaslán 4-místný ověřovací kód. Stejný kód je uložen i do `$_SESSION['verifi_code']`.
+- Před úspěšnou registrací, je novému uživateli na jeho uvedenou e-mailovou adresu zaslán 4-místný ověřovací kód. Stejný kód je uložen i do `$_SESSION['verifi_code']` jako hash.
 
 *app/scripts/php/auth/auth_functions.php*
 ```
@@ -97,7 +97,7 @@
 > Funkce `verifiMe()` je volána ve funkci `savePostsToSessions()`
 > `savePostsToSessions()` je volána v *signup.php*
 
-- Pokud uživatel zadná správný kód, tak se jeho data uloží do databáze a registrace je vyhodnocena jako úspěšná.
+- Pokud uživatel zadá správný kód, tak se jeho data uloží do databáze a registrace je vyhodnocena jako úspěšná.
 
 *verifi.php*
 ```
@@ -133,7 +133,7 @@
 - je nutné upravit soubor php.ini a sendmail.ini
 
 1. jděte na *xampp\sendmail* a otevřete soubor *sendmail.ini*
-    - **změňte** smtp_server=mail.mydomain.com **na** smtp_server=smtp.gamil.com
+    - **změňte** smtp_server=mail.mydomain.com **na** smtp_server=smtp.gmail.com
     - **změňte** smtp_port **na** smtp_port=465
     - **změňte** ;error_logfile=error.log **na** error_logfile=error.log
     - **změňte** ;debug_logfile=debug.log **na** debug_logfile=debug.log

@@ -29,9 +29,11 @@ END;
 
 CREATE TABLE IF NOT EXISTS `car_meeter`.`meets` (
   `meet_id` INT NOT NULL AUTO_INCREMENT,
+  `meet_hash` VARCHAR(255) NOT NULL,
   `organizer` VARCHAR(50) NOT NULL,
+  `organizer_id` VARCHAR(50) NOT NULL,
   `title` VARCHAR(50) NOT NULL,
-  `organizing` VARCHAR(50) NOT NULL,
+  `organizing` VARCHAR(100) NOT NULL,
   `car_specs` VARCHAR(50) NOT NULL,
   `datetime` DATETIME,
   `town` VARCHAR(50),
@@ -39,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `car_meeter`.`meets` (
   `place` VARCHAR(50),
   `gps_location` VARCHAR(200),
   `description` VARCHAR(500),
-  `party` VARCHAR(10000),
+  `party` VARCHAR(10000) NOT NULL,
   `established` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`meet_id`)
 )ENGINE=InnoDB;

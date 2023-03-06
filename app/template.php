@@ -30,11 +30,7 @@
     $page = $uriParam[0] ?? "";
     
     if (empty($page)) {
-        if (isset($_SESSION['loggedin'])) {
-            $page = 'login_home';
-        } else {
-            $page = 'home';
-        }
+        $page = 'home';
     }
 
     if (!isset($pages[$page])) {
@@ -101,7 +97,7 @@
         unset($_SESSION['info_message']);
     }
 
-    // session info in span
+    // user session info
     $nick="";
     $firstName="";
     $lastName="";
@@ -113,8 +109,8 @@
         $mail = $_SESSION['email'];
     }
 
-    // load meets
-    include_once('app/scripts/php/meets/load_meet.php');
+    // load data
+    include_once('app/scripts/php/load_data.php');
 
     // save contet to variables
     $content = file_get_contents("app/fragments/$page.html");
@@ -134,7 +130,9 @@
     $pageTemplate = str_replace("{lastName}", $lastName, $pageTemplate);
     $pageTemplate = str_replace("{mail}", $mail, $pageTemplate);
     $pageTemplate = str_replace("{meets}", $meets, $pageTemplate);
-    
+    $pageTemplate = str_replace("{myMeets}", $myMeets, $pageTemplate);
+    $pageTemplate = str_replace("{actionCalendar}", $actionCalendar, $pageTemplate);
+
     // display content
     echo $pageTemplate;
 ?>

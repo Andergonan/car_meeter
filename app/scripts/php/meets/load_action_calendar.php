@@ -1,8 +1,8 @@
 <?php
 
-    foreach ($result_meets as $key) {
-        $meets .= '
-            <div class="section">
+    foreach ($result_actionCalendar as $key) {
+        $actionCalendar .= '
+            <div class="section" style="margin-top: 2em; width: 800px;">
                 <div class="meets-table-container">   
                     <div id="title"><h2>'.$key['title'].'</h2></div>
                     <table>
@@ -35,11 +35,7 @@
                     <p><i class="fa-solid fa-id-card"></i> Pořadetel: '.$key['organizer'].'</p>
                     <p id="organizing">'.$key['organizing'].'</p>
                     <div id="meet-actions">
-                    <form action="app/scripts/php/meets/add_to_party.php" method="post">
-                        <input type="hidden" name="meet_id" value="'.$key['meet_id'].'">
-                        <button type="submit"><i class="fa-solid fa-wheelchair-move"></i> Zúčastnit se</button>
-                    </form>
-                    <form action="app/scripts/php/meets/leave_party.php" method="post">
+                    <form action="app/scripts/php/meets/leave_party_dashboard.php" method="post">
                         <input type="hidden" name="meet_id" value="'.$key['meet_id'].'">
                         <button type="submit"><i class="fa-solid fa-user-xmark"></i> Zrušit účast</button>
                     </form>
