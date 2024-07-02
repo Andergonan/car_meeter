@@ -137,7 +137,7 @@
     - **změňte** smtp_port **na** smtp_port=465
     - **změňte** ;error_logfile=error.log **na** error_logfile=error.log
     - **změňte** ;debug_logfile=debug.log **na** debug_logfile=debug.log
-    - **změňte** auth_username= **na** auth_username=istesovaniovereni@gamil.com
+    - **změňte** auth_username= **na** auth_username=FUNKČNÍ@EMAIL.SMILE
     - **přepište** auth_password= **na** auth_password=****
 
 2. jděte na *xampp\php* a otevřete soubor *php.ini*
