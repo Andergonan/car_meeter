@@ -2,6 +2,8 @@
 - *version 1.6.9*
 - *last update 06.03.2023*
 
+Sociální síť pro plánování tuning srazů
+
 ## Rozcestník
 - *[konvence](docs/konvence.md)*
 - *[dev documentation](docs/dev.md)*
