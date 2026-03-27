@@ -1,4 +1,4 @@
-# Car Meeter
+# Car Meeter - Maturitní práce
 - *version 1.6.9*
 - *last update 06.03.2023*
 
